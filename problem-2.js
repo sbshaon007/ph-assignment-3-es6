@@ -36,5 +36,3 @@ const filterActiveUsers = users => {
 
     return activeUsers;
 };
-
-// console.log(filterActiveUsers([{name:"A", isActive:true},{name:"B", isActive:false}]));
