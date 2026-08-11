@@ -11,10 +11,10 @@ const filterActiveUsers = users => {
     for (const user of users) {
 
         if (
-             !Object.hasOwn(user, `isActive`)
+            user === null
+            || !Object.hasOwn(user, `isActive`)
             || typeof user !== `object`
             || Array.isArray(user)
-            || user === null
         ) {
             return `Invalid`;
         }
