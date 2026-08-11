@@ -22,9 +22,7 @@ const bonusScore = (scores) => {
 
     const total = updatedScores.reduce((sum, currentItem) => {
 
-        let add = currentItem + sum;
-
-        return add;
+        return currentItem + sum;
 
     }, 0);
 
