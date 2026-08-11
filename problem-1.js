@@ -1,18 +1,22 @@
-const studentIntroduction = (obj) => {
+const studentIntroduction = student => {
 
     if (
-        typeof obj !== `object`
-
-        || (!Object.hasOwn(obj, `name`)
-            || !Object.hasOwn(obj, `age`)
-            || !Object.hasOwn(obj, `course`))
+        typeof student !== `object`
+        || student === null
+        || Array.isArray(student)
+        || Object.keys(student).length === 0
+        || !Object.hasOwn(student, `name`)
+        || !Object.hasOwn(student, `age`)
+        || !Object.hasOwn(student, `course`)
     ) {
-        return `Invalid`
+        return `Invalid`;
     }
 
-    const {name, age, course } = obj;
-    
-    return `My name is ${name}. I am ${age} years old. I am learning ${course}.`;
-}
+    const { name, age, course } = student;
 
-console.log(studentIntroduction({name:"Rafi",age:18,course:"JavaScript"}));
+    return `My name is ${name}. I am ${age} years old. I am learning ${course}.`;
+};
+
+// console.log(studentIntroduction({ name: "Rafi", age: 18, course: "JavaScript" }));
+// console.log(studentIntroduction({}));
+// console.log(studentIntroduction("student"));
